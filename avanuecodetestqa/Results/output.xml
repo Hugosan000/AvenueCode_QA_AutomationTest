@@ -1,0 +1,969 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230323 01:35:24.665" rpa="false" schemaversion="3">
+<suite id="s1" name="Avenuecode Automation" source="c:\Users\Administrator\Documents\Programação\AvenueCode\test\avenuecode_automation.robot">
+<test id="s1-t1" name="Case 01: Create Task" line="8">
+<kw name="Abrir o navegador" library="avenuecode_automation" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230323 01:35:25.108" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230323 01:35:25.108" endtime="20230323 01:35:26.521"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230323 01:35:26.521" endtime="20230323 01:35:26.649"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:25.104" endtime="20230323 01:35:26.649"/>
+</kw>
+<kw name="Given that the user is logged in to the ToDo App" library="avenuecode_automation">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230323 01:35:26.651" level="INFO">Opening url 'https://qa-test.avenuecode.io/'</msg>
+<status status="PASS" starttime="20230323 01:35:26.650" endtime="20230323 01:35:30.921"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//h1[contains(.,'QA Assessment')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230323 01:35:30.921" endtime="20230323 01:35:30.972"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//a[@class='btn btn-lg btn-primary'][contains(.,'Sign In')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:35:30.973" level="INFO">Clicking element '//a[@class='btn btn-lg btn-primary'][contains(.,'Sign In')]'.</msg>
+<status status="PASS" starttime="20230323 01:35:30.973" endtime="20230323 01:35:32.621"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//h4[contains(.,'Sign in')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230323 01:35:32.621" endtime="20230323 01:35:32.672"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=user_email</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:35:32.673" level="INFO">Clicking element 'id=user_email'.</msg>
+<status status="PASS" starttime="20230323 01:35:32.672" endtime="20230323 01:35:32.761"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user_email</arg>
+<arg>text=${login}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230323 01:35:32.764" level="INFO">Typing text 'victorfonsecasp@gmail.com' into text field 'id=user_email'.</msg>
+<status status="PASS" starttime="20230323 01:35:32.761" endtime="20230323 01:35:32.926"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=user_password</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:35:32.927" level="INFO">Clicking element 'id=user_password'.</msg>
+<status status="PASS" starttime="20230323 01:35:32.926" endtime="20230323 01:35:32.989"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user_password</arg>
+<arg>text=${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230323 01:35:32.991" level="INFO">Typing text 'Qualityassurance' into text field 'id=user_password'.</msg>
+<status status="PASS" starttime="20230323 01:35:32.990" endtime="20230323 01:35:33.104"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>name=commit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230323 01:35:33.105" level="INFO">Clicking button 'name=commit'.</msg>
+<status status="PASS" starttime="20230323 01:35:33.104" endtime="20230323 01:35:35.395"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//div[@class='alert alert-info'][contains(.,'Signed in successfully.')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230323 01:35:35.396" endtime="20230323 01:35:35.425"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>id=my_task</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230323 01:35:35.446" level="INFO">Element 'id=my_task' is displayed.</msg>
+<status status="PASS" starttime="20230323 01:35:35.425" endtime="20230323 01:35:35.447"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:26.650" endtime="20230323 01:35:35.447"/>
+</kw>
+<kw name="When the user clicks on the &quot;My Tasks&quot; link on the NavBar" library="avenuecode_automation">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=my_task</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:35:35.451" level="INFO">Clicking element 'id=my_task'.</msg>
+<status status="PASS" starttime="20230323 01:35:35.450" endtime="20230323 01:35:37.491"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//div[contains(@class,'task_container ng-scope')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230323 01:35:37.492" endtime="20230323 01:35:37.525"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:35.449" endtime="20230323 01:35:37.525"/>
+</kw>
+<kw name="Then the user is redirected to a page with all the created tasks so far" library="avenuecode_automation">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//div[contains(@class,'task_container ng-scope')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230323 01:35:37.546" level="INFO">Element '//div[contains(@class,'task_container ng-scope')]' is displayed.</msg>
+<status status="PASS" starttime="20230323 01:35:37.527" endtime="20230323 01:35:37.546"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:37.526" endtime="20230323 01:35:37.547"/>
+</kw>
+<kw name="And the user sees a message on the top part saying that list belongs to the logged user" library="avenuecode_automation">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>locator=//a[contains(.,'Welcome, Victor Hugo Fonseca!')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230323 01:35:37.563" level="INFO">Current page contains element '//a[contains(.,'Welcome, Victor Hugo Fonseca!')]'.</msg>
+<status status="PASS" starttime="20230323 01:35:37.548" endtime="20230323 01:35:37.563"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:37.547" endtime="20230323 01:35:37.563"/>
+</kw>
+<kw name="And the user creates a new task with at least three characters" library="avenuecode_automation">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=new_task</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:35:37.565" level="INFO">Clicking element 'id=new_task'.</msg>
+<status status="PASS" starttime="20230323 01:35:37.564" endtime="20230323 01:35:37.707"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=new_task</arg>
+<arg>text=This is an automated test description</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230323 01:35:37.708" level="INFO">Typing text 'This is an automated test description' into text field 'id=new_task'.</msg>
+<status status="PASS" starttime="20230323 01:35:37.707" endtime="20230323 01:35:37.899"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:37.564" endtime="20230323 01:35:37.900"/>
+</kw>
+<kw name="And the user adds the task to the list" library="avenuecode_automation">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//span[contains(@class,'input-group-addon glyphicon glyphicon-plus')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:35:37.915" level="INFO">Clicking element '//span[contains(@class,'input-group-addon glyphicon glyphicon-plus')]'.</msg>
+<status status="PASS" starttime="20230323 01:35:37.914" endtime="20230323 01:35:37.979"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:37.913" endtime="20230323 01:35:37.979"/>
+</kw>
+<kw name="And the new task is appended to the list of created tasks" library="avenuecode_automation">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>locator=//td[contains(.,'This is an automated test description')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230323 01:35:38.001" level="INFO">Current page contains element '//td[contains(.,'This is an automated test description')]'.</msg>
+<status status="PASS" starttime="20230323 01:35:37.982" endtime="20230323 01:35:38.003"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:37.981" endtime="20230323 01:35:38.003"/>
+</kw>
+<kw name="Fechar o navegador" library="avenuecode_automation" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230323 01:35:38.324" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-23.png"&gt;&lt;img src="selenium-screenshot-23.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230323 01:35:38.010" endtime="20230323 01:35:38.325"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230323 01:35:38.325" endtime="20230323 01:35:40.589"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:38.009" endtime="20230323 01:35:40.590"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:25.103" endtime="20230323 01:35:40.590"/>
+</test>
+<test id="s1-t2" name="Case 02: Create Subtasks" line="17">
+<kw name="Abrir o navegador" library="avenuecode_automation" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230323 01:35:40.593" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230323 01:35:40.593" endtime="20230323 01:35:41.978"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230323 01:35:41.979" endtime="20230323 01:35:42.103"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:40.593" endtime="20230323 01:35:42.103"/>
+</kw>
+<kw name="Given that the user is logged in to the ToDo App" library="avenuecode_automation">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230323 01:35:42.107" level="INFO">Opening url 'https://qa-test.avenuecode.io/'</msg>
+<status status="PASS" starttime="20230323 01:35:42.104" endtime="20230323 01:35:46.018"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//h1[contains(.,'QA Assessment')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230323 01:35:46.019" endtime="20230323 01:35:46.061"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//a[@class='btn btn-lg btn-primary'][contains(.,'Sign In')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:35:46.062" level="INFO">Clicking element '//a[@class='btn btn-lg btn-primary'][contains(.,'Sign In')]'.</msg>
+<status status="PASS" starttime="20230323 01:35:46.061" endtime="20230323 01:35:47.821"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//h4[contains(.,'Sign in')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230323 01:35:47.821" endtime="20230323 01:35:47.872"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=user_email</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:35:47.873" level="INFO">Clicking element 'id=user_email'.</msg>
+<status status="PASS" starttime="20230323 01:35:47.872" endtime="20230323 01:35:47.953"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user_email</arg>
+<arg>text=${login}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230323 01:35:47.954" level="INFO">Typing text 'victorfonsecasp@gmail.com' into text field 'id=user_email'.</msg>
+<status status="PASS" starttime="20230323 01:35:47.953" endtime="20230323 01:35:48.133"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=user_password</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:35:48.135" level="INFO">Clicking element 'id=user_password'.</msg>
+<status status="PASS" starttime="20230323 01:35:48.134" endtime="20230323 01:35:48.203"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user_password</arg>
+<arg>text=${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230323 01:35:48.204" level="INFO">Typing text 'Qualityassurance' into text field 'id=user_password'.</msg>
+<status status="PASS" starttime="20230323 01:35:48.203" endtime="20230323 01:35:48.324"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>name=commit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230323 01:35:48.326" level="INFO">Clicking button 'name=commit'.</msg>
+<status status="PASS" starttime="20230323 01:35:48.325" endtime="20230323 01:35:50.590"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//div[@class='alert alert-info'][contains(.,'Signed in successfully.')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230323 01:35:50.590" endtime="20230323 01:35:50.619"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>id=my_task</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230323 01:35:50.641" level="INFO">Element 'id=my_task' is displayed.</msg>
+<status status="PASS" starttime="20230323 01:35:50.620" endtime="20230323 01:35:50.641"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:42.104" endtime="20230323 01:35:50.642"/>
+</kw>
+<kw name="When the user clicks on the &quot;My Tasks&quot; link on the NavBar" library="avenuecode_automation">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=my_task</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:35:50.643" level="INFO">Clicking element 'id=my_task'.</msg>
+<status status="PASS" starttime="20230323 01:35:50.643" endtime="20230323 01:35:52.594"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//div[contains(@class,'task_container ng-scope')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230323 01:35:52.595" endtime="20230323 01:35:52.631"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:50.642" endtime="20230323 01:35:52.631"/>
+</kw>
+<kw name="Then the user is redirected to a page with all the created tasks so far" library="avenuecode_automation">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//div[contains(@class,'task_container ng-scope')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230323 01:35:52.655" level="INFO">Element '//div[contains(@class,'task_container ng-scope')]' is displayed.</msg>
+<status status="PASS" starttime="20230323 01:35:52.634" endtime="20230323 01:35:52.655"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:52.632" endtime="20230323 01:35:52.656"/>
+</kw>
+<kw name="And the user clicks on the &quot;Manage Subtasks&quot; button" library="avenuecode_automation">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@class='btn btn-xs btn-primary ng-binding'][contains(.,'(0) Manage Subtasks')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230323 01:35:52.659" level="INFO">Clicking button '//button[@class='btn btn-xs btn-primary ng-binding'][contains(.,'(0) Manage Subtasks')]'.</msg>
+<status status="PASS" starttime="20230323 01:35:52.658" endtime="20230323 01:35:52.911"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:52.657" endtime="20230323 01:35:52.911"/>
+</kw>
+<kw name="Then the user should see a popup dialog with the task ID and task description" library="avenuecode_automation">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>locator=//h3[contains(@class,'modal-title ng-binding')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230323 01:35:53.003" level="INFO">Current page contains element '//h3[contains(@class,'modal-title ng-binding')]'.</msg>
+<status status="PASS" starttime="20230323 01:35:52.913" endtime="20230323 01:35:53.003"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>id=edit_task</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230323 01:35:53.041" level="INFO">Current page contains element 'id=edit_task'.</msg>
+<status status="PASS" starttime="20230323 01:35:53.004" endtime="20230323 01:35:53.041"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:52.912" endtime="20230323 01:35:53.041"/>
+</kw>
+<kw name="And the user should see a form to enter SubTask Description and Due Date" library="avenuecode_automation">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>id=new_sub_task</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230323 01:35:53.081" level="INFO">Element 'id=new_sub_task' is displayed.</msg>
+<status status="PASS" starttime="20230323 01:35:53.048" endtime="20230323 01:35:53.081"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>id=dueDate</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230323 01:35:53.110" level="INFO">Element 'id=dueDate' is displayed.</msg>
+<status status="PASS" starttime="20230323 01:35:53.081" endtime="20230323 01:35:53.110"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:53.047" endtime="20230323 01:35:53.111"/>
+</kw>
+<kw name="When the user enters a valid SubTask Description and Due Date" library="avenuecode_automation">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=new_sub_task</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:35:53.114" level="INFO">Clicking element 'id=new_sub_task'.</msg>
+<status status="PASS" starttime="20230323 01:35:53.113" endtime="20230323 01:35:53.179"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=new_sub_task</arg>
+<arg>text=This is an automated test subtask description</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230323 01:35:53.180" level="INFO">Typing text 'This is an automated test subtask description' into text field 'id=new_sub_task'.</msg>
+<status status="PASS" starttime="20230323 01:35:53.179" endtime="20230323 01:35:53.354"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=dueDate</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:35:53.356" level="INFO">Clicking element 'id=dueDate'.</msg>
+<status status="PASS" starttime="20230323 01:35:53.355" endtime="20230323 01:35:53.414"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=dueDate</arg>
+<arg>text=3/23/2023</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230323 01:35:53.416" level="INFO">Typing text '3/23/2023' into text field 'id=dueDate'.</msg>
+<status status="PASS" starttime="20230323 01:35:53.415" endtime="20230323 01:35:53.549"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:53.112" endtime="20230323 01:35:53.549"/>
+</kw>
+<kw name="And the user clicks the &quot;Add SubTask&quot; button" library="avenuecode_automation">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=add-subtask</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230323 01:35:53.557" level="INFO">Clicking button 'id=add-subtask'.</msg>
+<status status="PASS" starttime="20230323 01:35:53.556" endtime="20230323 01:35:53.674"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:53.555" endtime="20230323 01:35:53.674"/>
+</kw>
+<kw name="Then the user should see the SubTask appended to the bottom of the modal dialog" library="avenuecode_automation">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//h4[contains(.,'SubTasks of this ToDo:')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230323 01:35:53.724" level="INFO">Element '//h4[contains(.,'SubTasks of this ToDo:')]' is displayed.</msg>
+<status status="PASS" starttime="20230323 01:35:53.678" endtime="20230323 01:35:53.725"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//a[@editable-text='sub_task.body'][contains(.,'This is an automated test subtask description')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230323 01:35:53.773" level="INFO">Element '//a[@editable-text='sub_task.body'][contains(.,'This is an automated test subtask description')]' is displayed.</msg>
+<status status="PASS" starttime="20230323 01:35:53.725" endtime="20230323 01:35:53.774"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:53.678" endtime="20230323 01:35:53.774"/>
+</kw>
+<kw name="And the user should see the number of SubTasks updated on the &quot;Manage Subtasks&quot; button" library="avenuecode_automation">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@class='btn btn-primary'][contains(.,'Close')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230323 01:35:53.777" level="INFO">Clicking button '//button[@class='btn btn-primary'][contains(.,'Close')]'.</msg>
+<status status="PASS" starttime="20230323 01:35:53.776" endtime="20230323 01:35:53.857"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//button[@class='btn btn-xs btn-primary ng-binding'][contains(.,'(1) Manage Subtasks')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230323 01:35:53.883" level="INFO">Element '//button[@class='btn btn-xs btn-primary ng-binding'][contains(.,'(1) Manage Subtasks')]' is displayed.</msg>
+<status status="PASS" starttime="20230323 01:35:53.857" endtime="20230323 01:35:53.883"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:53.775" endtime="20230323 01:35:53.886"/>
+</kw>
+<kw name="Then delete the user task" library="avenuecode_automation">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@class='btn btn-xs btn-danger'][contains(.,'Remove')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230323 01:35:53.889" level="INFO">Clicking button '//button[@class='btn btn-xs btn-danger'][contains(.,'Remove')]'.</msg>
+<status status="PASS" starttime="20230323 01:35:53.889" endtime="20230323 01:35:54.052"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:53.888" endtime="20230323 01:35:54.053"/>
+</kw>
+<kw name="Fechar o navegador" library="avenuecode_automation" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230323 01:35:54.238" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-24.png"&gt;&lt;img src="selenium-screenshot-24.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230323 01:35:54.056" endtime="20230323 01:35:54.238"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230323 01:35:54.239" endtime="20230323 01:35:56.487"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:54.055" endtime="20230323 01:35:56.488"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:40.592" endtime="20230323 01:35:56.489"/>
+</test>
+<test id="s1-t3" name="Case 03: Bugs found" line="30">
+<kw name="Abrir o navegador" library="avenuecode_automation" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230323 01:35:56.492" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230323 01:35:56.491" endtime="20230323 01:35:57.977"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230323 01:35:57.977" endtime="20230323 01:35:58.097"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:56.491" endtime="20230323 01:35:58.097"/>
+</kw>
+<kw name="Given that the user is logged in to the ToDo App" library="avenuecode_automation">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230323 01:35:58.099" level="INFO">Opening url 'https://qa-test.avenuecode.io/'</msg>
+<status status="PASS" starttime="20230323 01:35:58.098" endtime="20230323 01:36:02.422"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//h1[contains(.,'QA Assessment')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230323 01:36:02.423" endtime="20230323 01:36:02.467"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//a[@class='btn btn-lg btn-primary'][contains(.,'Sign In')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:02.468" level="INFO">Clicking element '//a[@class='btn btn-lg btn-primary'][contains(.,'Sign In')]'.</msg>
+<status status="PASS" starttime="20230323 01:36:02.468" endtime="20230323 01:36:04.228"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//h4[contains(.,'Sign in')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230323 01:36:04.229" endtime="20230323 01:36:04.273"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=user_email</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:04.274" level="INFO">Clicking element 'id=user_email'.</msg>
+<status status="PASS" starttime="20230323 01:36:04.273" endtime="20230323 01:36:04.360"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user_email</arg>
+<arg>text=${login}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:04.363" level="INFO">Typing text 'victorfonsecasp@gmail.com' into text field 'id=user_email'.</msg>
+<status status="PASS" starttime="20230323 01:36:04.362" endtime="20230323 01:36:04.539"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=user_password</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:04.540" level="INFO">Clicking element 'id=user_password'.</msg>
+<status status="PASS" starttime="20230323 01:36:04.539" endtime="20230323 01:36:04.605"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user_password</arg>
+<arg>text=${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:04.606" level="INFO">Typing text 'Qualityassurance' into text field 'id=user_password'.</msg>
+<status status="PASS" starttime="20230323 01:36:04.605" endtime="20230323 01:36:04.724"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>name=commit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:04.726" level="INFO">Clicking button 'name=commit'.</msg>
+<status status="PASS" starttime="20230323 01:36:04.725" endtime="20230323 01:36:07.384"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//div[@class='alert alert-info'][contains(.,'Signed in successfully.')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230323 01:36:07.384" endtime="20230323 01:36:07.417"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>id=my_task</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230323 01:36:07.440" level="INFO">Element 'id=my_task' is displayed.</msg>
+<status status="PASS" starttime="20230323 01:36:07.418" endtime="20230323 01:36:07.440"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:58.098" endtime="20230323 01:36:07.440"/>
+</kw>
+<kw name="When the user clicks on the &quot;My Tasks&quot; link on the NavBar" library="avenuecode_automation">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=my_task</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:07.442" level="INFO">Clicking element 'id=my_task'.</msg>
+<status status="PASS" starttime="20230323 01:36:07.442" endtime="20230323 01:36:10.028"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//div[contains(@class,'task_container ng-scope')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230323 01:36:10.028" endtime="20230323 01:36:10.062"/>
+</kw>
+<status status="PASS" starttime="20230323 01:36:07.441" endtime="20230323 01:36:10.062"/>
+</kw>
+<kw name="Then the user is redirected to a page with all the created tasks so far" library="avenuecode_automation">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//div[contains(@class,'task_container ng-scope')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230323 01:36:10.084" level="INFO">Element '//div[contains(@class,'task_container ng-scope')]' is displayed.</msg>
+<status status="PASS" starttime="20230323 01:36:10.063" endtime="20230323 01:36:10.085"/>
+</kw>
+<status status="PASS" starttime="20230323 01:36:10.062" endtime="20230323 01:36:10.085"/>
+</kw>
+<kw name="Then the user should see his displayed message as &quot;Hey John, this is your todo list for today:&quot;" library="avenuecode_automation">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//a[contains(.,'Welcome, Victor Hugo Fonseca!')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230323 01:36:10.114" level="INFO">Element '//a[contains(.,'Welcome, Victor Hugo Fonseca!')]' is displayed.</msg>
+<status status="PASS" starttime="20230323 01:36:10.088" endtime="20230323 01:36:10.114"/>
+</kw>
+<status status="PASS" starttime="20230323 01:36:10.088" endtime="20230323 01:36:10.115"/>
+</kw>
+<kw name="And the user can create a new task with shift + enter" library="avenuecode_automation">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=new_task</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:10.118" level="INFO">Clicking element 'id=new_task'.</msg>
+<status status="PASS" starttime="20230323 01:36:10.117" endtime="20230323 01:36:10.180"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=new_task</arg>
+<arg>text=This is an bug automated test description</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:10.182" level="INFO">Typing text 'This is an bug automated test description' into text field 'id=new_task'.</msg>
+<status status="PASS" starttime="20230323 01:36:10.181" endtime="20230323 01:36:10.414"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>id=new_task</arg>
+<arg>SHIFT+RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230323 01:36:10.415" level="INFO">Sending key(s) ('SHIFT+RETURN',) to id=new_task element.</msg>
+<msg timestamp="20230323 01:36:10.705" level="INFO">Pressing special key SHIFT down.</msg>
+<msg timestamp="20230323 01:36:10.705" level="INFO">Pressing special key RETURN down.</msg>
+<msg timestamp="20230323 01:36:10.706" level="INFO">Releasing special key SHIFT.</msg>
+<msg timestamp="20230323 01:36:10.706" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20230323 01:36:10.414" endtime="20230323 01:36:10.727"/>
+</kw>
+<status status="PASS" starttime="20230323 01:36:10.115" endtime="20230323 01:36:10.727"/>
+</kw>
+<kw name="When the user try creating a new task with low than 3 letters it's possible to create" library="avenuecode_automation">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=new_task</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:10.729" level="INFO">Clicking element 'id=new_task'.</msg>
+<status status="PASS" starttime="20230323 01:36:10.728" endtime="20230323 01:36:10.776"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=new_task</arg>
+<arg>text=1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:10.777" level="INFO">Typing text '1' into text field 'id=new_task'.</msg>
+<status status="PASS" starttime="20230323 01:36:10.776" endtime="20230323 01:36:10.837"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//span[contains(@class,'input-group-addon glyphicon glyphicon-plus')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:10.838" level="INFO">Clicking element '//span[contains(@class,'input-group-addon glyphicon glyphicon-plus')]'.</msg>
+<status status="PASS" starttime="20230323 01:36:10.838" endtime="20230323 01:36:10.900"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>locator=//a[@editable-text='task.body'][contains(.,'1')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230323 01:36:10.923" level="INFO">Current page contains element '//a[@editable-text='task.body'][contains(.,'1')]'.</msg>
+<status status="PASS" starttime="20230323 01:36:10.903" endtime="20230323 01:36:10.924"/>
+</kw>
+<status status="PASS" starttime="20230323 01:36:10.728" endtime="20230323 01:36:10.924"/>
+</kw>
+<kw name="Then should the user create a new task with limited words of 250, but its possible 254" library="avenuecode_automation">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=new_task</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:10.929" level="INFO">Clicking element 'id=new_task'.</msg>
+<status status="PASS" starttime="20230323 01:36:10.928" endtime="20230323 01:36:11.105"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=new_task</arg>
+<arg>text=Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eleifend sem nulla, in gravida ipsum sagittis at. In tincidunt gravida nisi, interdum elementum diam. Pellentesque viverra tincidunt mollis. Nulla consequat, mi vel interdum malesuada123456</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:11.107" level="INFO">Typing text 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eleifend sem nulla, in gravida ipsum sagittis at. In tincidunt gravida nisi, interdum elementum diam. Pellentesque viverra tincidunt mollis. Nulla consequat, mi vel interdum malesuada123456' into text field 'id=new_task'.</msg>
+<status status="PASS" starttime="20230323 01:36:11.106" endtime="20230323 01:36:11.719"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//span[contains(@class,'input-group-addon glyphicon glyphicon-plus')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:11.721" level="INFO">Clicking element '//span[contains(@class,'input-group-addon glyphicon glyphicon-plus')]'.</msg>
+<status status="PASS" starttime="20230323 01:36:11.720" endtime="20230323 01:36:11.763"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>locator=//a[@editable-text='task.body'][contains(.,'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eleifend sem nulla, in gravida ipsum sagittis at. In tincidunt gravida nisi, interdum elementum diam. Pellentesque viverra tincidunt mollis. Nulla consequat, mi vel interdum malesuada123456')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230323 01:36:11.783" level="INFO">Current page contains element '//a[@editable-text='task.body'][contains(.,'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eleifend sem nulla, in gravida ipsum sagittis at. In tincidunt gravida nisi, interdum elementum diam. Pellentesque viverra tincidunt mollis. Nulla consequat, mi vel interdum malesuada123456')]'.</msg>
+<status status="PASS" starttime="20230323 01:36:11.763" endtime="20230323 01:36:11.784"/>
+</kw>
+<status status="PASS" starttime="20230323 01:36:10.928" endtime="20230323 01:36:11.786"/>
+</kw>
+<kw name="When the user create a task with 254 words and try to edit, said that task cant be blank" library="avenuecode_automation">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//a[@editable-text='task.body'][contains(.,'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eleifend sem nulla, in gravida ipsum sagittis at. In tincidunt gravida nisi, interdum elementum diam. Pellentesque viverra tincidunt mollis. Nulla consequat, mi vel interdum malesuada123456')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:11.791" level="INFO">Clicking element '//a[@editable-text='task.body'][contains(.,'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eleifend sem nulla, in gravida ipsum sagittis at. In tincidunt gravida nisi, interdum elementum diam. Pellentesque viverra tincidunt mollis. Nulla consequat, mi vel interdum malesuada123456')]'.</msg>
+<status status="PASS" starttime="20230323 01:36:11.790" endtime="20230323 01:36:11.881"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//input[contains(@ng-model,'$data')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:11.882" level="INFO">Clicking element '//input[contains(@ng-model,'$data')]'.</msg>
+<status status="PASS" starttime="20230323 01:36:11.881" endtime="20230323 01:36:12.029"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[contains(@ng-model,'$data')]</arg>
+<arg>text=Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eleifend sem nulla, in gravida ipsum sagittis at. In tincidunt gravida nisi, interdum elementum diam. Pellentesque viverra tincidunt mollis. Nulla consequat, mi vel interdum malesuada12345615125</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:12.031" level="INFO">Typing text 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eleifend sem nulla, in gravida ipsum sagittis at. In tincidunt gravida nisi, interdum elementum diam. Pellentesque viverra tincidunt mollis. Nulla consequat, mi vel interdum malesuada12345615125' into text field '//input[contains(@ng-model,'$data')]'.</msg>
+<status status="PASS" starttime="20230323 01:36:12.030" endtime="20230323 01:36:12.734"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[contains(@type,'submit')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:12.738" level="INFO">Clicking button '//button[contains(@type,'submit')]'.</msg>
+<status status="PASS" starttime="20230323 01:36:12.737" endtime="20230323 01:36:12.826"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//div[contains(@class,'editable-error help-block ng-binding')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230323 01:36:12.864" level="INFO">Element '//div[contains(@class,'editable-error help-block ng-binding')]' is displayed.</msg>
+<status status="PASS" starttime="20230323 01:36:12.826" endtime="20230323 01:36:12.864"/>
+</kw>
+<status status="PASS" starttime="20230323 01:36:11.790" endtime="20230323 01:36:12.864"/>
+</kw>
+<kw name="When the user creates a subtask it's possible put inexistent datas on due date" library="avenuecode_automation">
+<kw name="the user creates a new task with at least three characters" library="avenuecode_automation">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=new_task</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:12.867" level="INFO">Clicking element 'id=new_task'.</msg>
+<status status="PASS" starttime="20230323 01:36:12.866" endtime="20230323 01:36:12.945"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=new_task</arg>
+<arg>text=This is an automated test description</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:12.946" level="INFO">Typing text 'This is an automated test description' into text field 'id=new_task'.</msg>
+<status status="PASS" starttime="20230323 01:36:12.945" endtime="20230323 01:36:13.066"/>
+</kw>
+<status status="PASS" starttime="20230323 01:36:12.866" endtime="20230323 01:36:13.067"/>
+</kw>
+<kw name="the user adds the task to the list" library="avenuecode_automation">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//span[contains(@class,'input-group-addon glyphicon glyphicon-plus')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:13.068" level="INFO">Clicking element '//span[contains(@class,'input-group-addon glyphicon glyphicon-plus')]'.</msg>
+<status status="PASS" starttime="20230323 01:36:13.067" endtime="20230323 01:36:13.122"/>
+</kw>
+<status status="PASS" starttime="20230323 01:36:13.067" endtime="20230323 01:36:13.122"/>
+</kw>
+<kw name="the new task is appended to the list of created tasks" library="avenuecode_automation">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>locator=//td[contains(.,'This is an automated test description')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230323 01:36:13.143" level="INFO">Current page contains element '//td[contains(.,'This is an automated test description')]'.</msg>
+<status status="PASS" starttime="20230323 01:36:13.123" endtime="20230323 01:36:13.143"/>
+</kw>
+<status status="PASS" starttime="20230323 01:36:13.122" endtime="20230323 01:36:13.144"/>
+</kw>
+<kw name="the user clicks on the &quot;Manage Subtasks&quot; button" library="avenuecode_automation">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@class='btn btn-xs btn-primary ng-binding'][contains(.,'(0) Manage Subtasks')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:13.145" level="INFO">Clicking button '//button[@class='btn btn-xs btn-primary ng-binding'][contains(.,'(0) Manage Subtasks')]'.</msg>
+<status status="PASS" starttime="20230323 01:36:13.144" endtime="20230323 01:36:13.361"/>
+</kw>
+<status status="PASS" starttime="20230323 01:36:13.144" endtime="20230323 01:36:13.361"/>
+</kw>
+<kw name="the user should see a form to enter SubTask Description and Due Date" library="avenuecode_automation">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>id=new_sub_task</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230323 01:36:13.414" level="INFO">Element 'id=new_sub_task' is displayed.</msg>
+<status status="PASS" starttime="20230323 01:36:13.362" endtime="20230323 01:36:13.415"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>id=dueDate</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230323 01:36:13.462" level="INFO">Element 'id=dueDate' is displayed.</msg>
+<status status="PASS" starttime="20230323 01:36:13.416" endtime="20230323 01:36:13.462"/>
+</kw>
+<status status="PASS" starttime="20230323 01:36:13.361" endtime="20230323 01:36:13.463"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=new_sub_task</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:13.464" level="INFO">Clicking element 'id=new_sub_task'.</msg>
+<status status="PASS" starttime="20230323 01:36:13.463" endtime="20230323 01:36:13.540"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=new_sub_task</arg>
+<arg>text=This is an bug automated test subtask description</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:13.541" level="INFO">Typing text 'This is an bug automated test subtask description' into text field 'id=new_sub_task'.</msg>
+<status status="PASS" starttime="20230323 01:36:13.540" endtime="20230323 01:36:13.719"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=dueDate</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:13.721" level="INFO">Clicking element 'id=dueDate'.</msg>
+<status status="PASS" starttime="20230323 01:36:13.720" endtime="20230323 01:36:13.777"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=dueDate</arg>
+<arg>text=44/44/2023</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:13.778" level="INFO">Typing text '44/44/2023' into text field 'id=dueDate'.</msg>
+<status status="PASS" starttime="20230323 01:36:13.778" endtime="20230323 01:36:13.892"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=add-subtask</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:13.893" level="INFO">Clicking button 'id=add-subtask'.</msg>
+<status status="PASS" starttime="20230323 01:36:13.892" endtime="20230323 01:36:13.979"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//a[@editable-text='sub_task.body'][contains(.,'This is an bug automated test subtask description')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230323 01:36:14.012" level="INFO">Element '//a[@editable-text='sub_task.body'][contains(.,'This is an bug automated test subtask description')]' is displayed.</msg>
+<status status="PASS" starttime="20230323 01:36:13.979" endtime="20230323 01:36:14.012"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@class='btn btn-primary'][contains(.,'Close')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:14.013" level="INFO">Clicking button '//button[@class='btn btn-primary'][contains(.,'Close')]'.</msg>
+<status status="PASS" starttime="20230323 01:36:14.012" endtime="20230323 01:36:14.131"/>
+</kw>
+<status status="PASS" starttime="20230323 01:36:12.866" endtime="20230323 01:36:14.131"/>
+</kw>
+<kw name="And its possible to create an subtask with more than 250 words" library="avenuecode_automation">
+<kw name="the user clicks on the &quot;Manage Subtasks&quot; button" library="avenuecode_automation">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@class='btn btn-xs btn-primary ng-binding'][contains(.,'(0) Manage Subtasks')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:14.134" level="INFO">Clicking button '//button[@class='btn btn-xs btn-primary ng-binding'][contains(.,'(0) Manage Subtasks')]'.</msg>
+<status status="PASS" starttime="20230323 01:36:14.133" endtime="20230323 01:36:14.377"/>
+</kw>
+<status status="PASS" starttime="20230323 01:36:14.133" endtime="20230323 01:36:14.377"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=new_sub_task</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:14.378" level="INFO">Clicking element 'id=new_sub_task'.</msg>
+<status status="PASS" starttime="20230323 01:36:14.378" endtime="20230323 01:36:14.446"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=new_sub_task</arg>
+<arg>text=text=Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eleifend sem nulla, in gravida ipsum sagittis at. In tincidunt gravida nisi, interdum elementum diam. Pellentesque viverra tincidunt mollis. Nulla consequat, mi vel interdum malesuada12345615125</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:14.447" level="INFO">Typing text 'text=Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eleifend sem nulla, in gravida ipsum sagittis at. In tincidunt gravida nisi, interdum elementum diam. Pellentesque viverra tincidunt mollis. Nulla consequat, mi vel interdum malesuada12345615125' into text field 'id=new_sub_task'.</msg>
+<status status="PASS" starttime="20230323 01:36:14.446" endtime="20230323 01:36:15.040"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=add-subtask</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:15.041" level="INFO">Clicking button 'id=add-subtask'.</msg>
+<status status="PASS" starttime="20230323 01:36:15.040" endtime="20230323 01:36:15.111"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@class='btn btn-primary'][contains(.,'Close')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:15.112" level="INFO">Clicking button '//button[@class='btn btn-primary'][contains(.,'Close')]'.</msg>
+<status status="PASS" starttime="20230323 01:36:15.111" endtime="20230323 01:36:15.181"/>
+</kw>
+<status status="PASS" starttime="20230323 01:36:14.132" endtime="20230323 01:36:15.181"/>
+</kw>
+<kw name="And its possible to create an subtask pressing enter Button" library="avenuecode_automation">
+<kw name="the user clicks on the &quot;Manage Subtasks&quot; button" library="avenuecode_automation">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@class='btn btn-xs btn-primary ng-binding'][contains(.,'(0) Manage Subtasks')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:15.183" level="INFO">Clicking button '//button[@class='btn btn-xs btn-primary ng-binding'][contains(.,'(0) Manage Subtasks')]'.</msg>
+<status status="PASS" starttime="20230323 01:36:15.183" endtime="20230323 01:36:15.340"/>
+</kw>
+<status status="PASS" starttime="20230323 01:36:15.182" endtime="20230323 01:36:15.340"/>
+</kw>
+<kw name="the user should see a form to enter SubTask Description and Due Date" library="avenuecode_automation">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>id=new_sub_task</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230323 01:36:15.362" level="INFO">Element 'id=new_sub_task' is displayed.</msg>
+<status status="PASS" starttime="20230323 01:36:15.341" endtime="20230323 01:36:15.362"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>id=dueDate</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230323 01:36:15.382" level="INFO">Element 'id=dueDate' is displayed.</msg>
+<status status="PASS" starttime="20230323 01:36:15.362" endtime="20230323 01:36:15.382"/>
+</kw>
+<status status="PASS" starttime="20230323 01:36:15.340" endtime="20230323 01:36:15.382"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=new_sub_task</arg>
+<arg>text=This is an bug automated test description</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:15.383" level="INFO">Typing text 'This is an bug automated test description' into text field 'id=new_sub_task'.</msg>
+<status status="PASS" starttime="20230323 01:36:15.382" endtime="20230323 01:36:15.617"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>id=new_task</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230323 01:36:15.618" level="INFO">Sending key(s) ('RETURN',) to id=new_task element.</msg>
+<msg timestamp="20230323 01:36:15.911" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20230323 01:36:15.912" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20230323 01:36:15.617" endtime="20230323 01:36:15.926"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@class='btn btn-primary'][contains(.,'Close')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:15.927" level="INFO">Clicking button '//button[@class='btn btn-primary'][contains(.,'Close')]'.</msg>
+<status status="PASS" starttime="20230323 01:36:15.927" endtime="20230323 01:36:16.000"/>
+</kw>
+<status status="PASS" starttime="20230323 01:36:15.182" endtime="20230323 01:36:16.000"/>
+</kw>
+<kw name="And its possible to create an subtask without description" library="avenuecode_automation">
+<kw name="the user clicks on the &quot;Manage Subtasks&quot; button" library="avenuecode_automation">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@class='btn btn-xs btn-primary ng-binding'][contains(.,'(0) Manage Subtasks')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:16.004" level="INFO">Clicking button '//button[@class='btn btn-xs btn-primary ng-binding'][contains(.,'(0) Manage Subtasks')]'.</msg>
+<status status="PASS" starttime="20230323 01:36:16.004" endtime="20230323 01:36:16.162"/>
+</kw>
+<status status="PASS" starttime="20230323 01:36:16.003" endtime="20230323 01:36:16.162"/>
+</kw>
+<kw name="the user should see a form to enter SubTask Description and Due Date" library="avenuecode_automation">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>id=new_sub_task</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230323 01:36:16.181" level="INFO">Element 'id=new_sub_task' is displayed.</msg>
+<status status="PASS" starttime="20230323 01:36:16.163" endtime="20230323 01:36:16.181"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>id=dueDate</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230323 01:36:16.200" level="INFO">Element 'id=dueDate' is displayed.</msg>
+<status status="PASS" starttime="20230323 01:36:16.182" endtime="20230323 01:36:16.200"/>
+</kw>
+<status status="PASS" starttime="20230323 01:36:16.162" endtime="20230323 01:36:16.200"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=new_sub_task</arg>
+<arg>text=</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:16.201" level="INFO">Typing text '' into text field 'id=new_sub_task'.</msg>
+<status status="PASS" starttime="20230323 01:36:16.200" endtime="20230323 01:36:16.287"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=add-subtask</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:16.288" level="INFO">Clicking button 'id=add-subtask'.</msg>
+<status status="PASS" starttime="20230323 01:36:16.288" endtime="20230323 01:36:16.378"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@class='btn btn-primary'][contains(.,'Close')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:16.379" level="INFO">Clicking button '//button[@class='btn btn-primary'][contains(.,'Close')]'.</msg>
+<status status="PASS" starttime="20230323 01:36:16.378" endtime="20230323 01:36:16.447"/>
+</kw>
+<status status="PASS" starttime="20230323 01:36:16.003" endtime="20230323 01:36:16.448"/>
+</kw>
+<kw name="And its possible to create an subtask without due date" library="avenuecode_automation">
+<kw name="the user clicks on the &quot;Manage Subtasks&quot; button" library="avenuecode_automation">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@class='btn btn-xs btn-primary ng-binding'][contains(.,'(0) Manage Subtasks')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:16.450" level="INFO">Clicking button '//button[@class='btn btn-xs btn-primary ng-binding'][contains(.,'(0) Manage Subtasks')]'.</msg>
+<status status="PASS" starttime="20230323 01:36:16.450" endtime="20230323 01:36:16.601"/>
+</kw>
+<status status="PASS" starttime="20230323 01:36:16.449" endtime="20230323 01:36:16.601"/>
+</kw>
+<kw name="the user should see a form to enter SubTask Description and Due Date" library="avenuecode_automation">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>id=new_sub_task</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230323 01:36:16.626" level="INFO">Element 'id=new_sub_task' is displayed.</msg>
+<status status="PASS" starttime="20230323 01:36:16.602" endtime="20230323 01:36:16.626"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>id=dueDate</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230323 01:36:16.648" level="INFO">Element 'id=dueDate' is displayed.</msg>
+<status status="PASS" starttime="20230323 01:36:16.627" endtime="20230323 01:36:16.648"/>
+</kw>
+<status status="PASS" starttime="20230323 01:36:16.601" endtime="20230323 01:36:16.649"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=new_sub_task</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:16.650" level="INFO">Clicking element 'id=new_sub_task'.</msg>
+<status status="PASS" starttime="20230323 01:36:16.649" endtime="20230323 01:36:16.721"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=new_sub_task</arg>
+<arg>text=This is an bug automated test subtask description</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:16.722" level="INFO">Typing text 'This is an bug automated test subtask description' into text field 'id=new_sub_task'.</msg>
+<status status="PASS" starttime="20230323 01:36:16.721" endtime="20230323 01:36:16.904"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=dueDate</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:16.909" level="INFO">Clicking element 'id=dueDate'.</msg>
+<status status="PASS" starttime="20230323 01:36:16.905" endtime="20230323 01:36:16.969"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=dueDate</arg>
+<arg>text=</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:16.970" level="INFO">Typing text '' into text field 'id=dueDate'.</msg>
+<status status="PASS" starttime="20230323 01:36:16.970" endtime="20230323 01:36:17.188"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=add-subtask</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:17.189" level="INFO">Clicking button 'id=add-subtask'.</msg>
+<status status="PASS" starttime="20230323 01:36:17.189" endtime="20230323 01:36:17.265"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//a[@editable-text='sub_task.body'][contains(.,'This is an bug automated test subtask description')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230323 01:36:17.288" level="INFO">Element '//a[@editable-text='sub_task.body'][contains(.,'This is an bug automated test subtask description')]' is displayed.</msg>
+<status status="PASS" starttime="20230323 01:36:17.266" endtime="20230323 01:36:17.288"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@class='btn btn-primary'][contains(.,'Close')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230323 01:36:17.289" level="INFO">Clicking button '//button[@class='btn btn-primary'][contains(.,'Close')]'.</msg>
+<status status="PASS" starttime="20230323 01:36:17.288" endtime="20230323 01:36:17.354"/>
+</kw>
+<status status="PASS" starttime="20230323 01:36:16.448" endtime="20230323 01:36:17.354"/>
+</kw>
+<kw name="Fechar o navegador" library="avenuecode_automation" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230323 01:36:17.538" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-25.png"&gt;&lt;img src="selenium-screenshot-25.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230323 01:36:17.356" endtime="20230323 01:36:17.538"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230323 01:36:17.538" endtime="20230323 01:36:19.795"/>
+</kw>
+<status status="PASS" starttime="20230323 01:36:17.355" endtime="20230323 01:36:19.795"/>
+</kw>
+<status status="PASS" starttime="20230323 01:35:56.490" endtime="20230323 01:36:19.799"/>
+</test>
+<doc>Test case for US#1 - Create Task</doc>
+<status status="PASS" starttime="20230323 01:35:24.674" endtime="20230323 01:36:19.801"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Avenuecode Automation">Avenuecode Automation</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

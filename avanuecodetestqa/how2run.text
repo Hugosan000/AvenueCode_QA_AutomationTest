@@ -1,0 +1,19 @@
+Para executar o código em robot framework apresentado, será necessário instalar alguns programas e bibliotecas. A seguir, apresento uma lista dos requisitos e como instalá-los:
+
+Python: O robot framework é executado em Python, portanto, é necessário ter o Python instalado na máquina. A versão recomendada é o Python 3.7 ou superior. O Python pode ser baixado e instalado a partir do site oficial do Python: https://www.python.org/downloads/.
+
+Robot Framework: O Robot Framework é um framework de teste de código aberto que deve ser instalado antes de poder ser usado. Pode ser instalado usando o seguinte comando pip:
+
+pip install robotframework
+
+SeleniumLibrary: A biblioteca SeleniumLibrary é usada para interagir com o navegador. Pode ser instalada usando o seguinte comando pip:
+
+pip install robotframework-seleniumlibrary
+ChromeDriver: O ChromeDriver é um executável que o Selenium usa para interagir com o navegador Chrome. O ChromeDriver pode ser baixado e instalado a partir do seguinte site: https://chromedriver.chromium.org/downloads.
+
+Depois de instalar todos os requisitos, você pode executar o código em robot framework no terminal usando o seguinte comando:
+
+robot .\Test\avenuecode_automation.robot
+Substitua  pelo nome do arquivo em que o código está salvo. Certifique-se de estar no diretório correto antes de executar o comando acima.
+
+Certifique-se também de ter o navegador Google Chrome instalado em seu sistema antes de executar o código.

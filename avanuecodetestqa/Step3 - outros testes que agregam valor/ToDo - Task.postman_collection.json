@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "abbc6382-744e-4dd2-af5f-613af012cf71",
+		"name": "ToDo - Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18367366"
+	},
+	"item": [
+		{
+			"name": "Task 10983",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authority",
+						"value": "qa-test.avenuecode.io"
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json;charset=UTF-8"
+					},
+					{
+						"key": "cookie",
+						"value": "XSRF-TOKEN=kXvm5ojQPF4nuo7T5utLCb07QzPaqSXHqU1r8ME4z30%3D; _todo_rails_angular_session=VXl5T214Z3NGY3JhUFJZZ1o5bHdEZ2tMU01rWWRWUkJwSEhQMHNUV01qVHNQeEFYK3Y3elF0Q1ByYndNWFgxbE5tODNvaG9ad2RDVnQxSDg3NEpnNFc2MjNjV21rajM2VWJITDJiT0lKNm03Zmh5c0tjVjZBampTY2hnRkUzM3FYa1Z3Z3dQN3JibWVRVWcxamxTUnN5eDlCdUFnTWRjQWt1ZXAzQ2w2UUl3TXJaYVRZdjZLNUZ1SnpQNWU4WjBvRHRRUFd5TzVqU0REbWVteXNrcGExWEgvR3Z1eXlFMzZnMVY3RElhYjJkUFZFQzd2V09iNXkwMWFlaFVWcE5nbzhFZlFvRXNmbWtYcXZmR1o0OFdoUVAwRG05V2h0cWtBMlM4ekthbzhISFNFR0RvbjZ3T0k4OVhXcXVGdzlsTCstLXZWTFdxbXRyMDl6VmYveW43NzVTc3c9PQ%3D%3D--b4a0858a78ddb318975a00cc35a9946b87f6a8af"
+					},
+					{
+						"key": "dnt",
+						"value": "1"
+					},
+					{
+						"key": "origin",
+						"value": "https://qa-test.avenuecode.io"
+					},
+					{
+						"key": "referer",
+						"value": "https://qa-test.avenuecode.io/tasks"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"110\", \"Not A(Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "x-xsrf-token",
+						"value": "kXvm5ojQPF4nuo7T5utLCb07QzPaqSXHqU1r8ME4z30="
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":10983,\"body\":\"example\",\"public\":true,\"created_at\":\"2023-03-23T01:17:39.399Z\",\"updated_at\":\"2023-03-23T01:17:39.399Z\",\"sort_order\":1,\"user_id\":290,\"sub_tasks_count\":0,\"completed\":false}"
+				},
+				"url": {
+					"raw": "https://qa-test.avenuecode.io/tasks/10983.json",
+					"protocol": "https",
+					"host": [
+						"qa-test",
+						"avenuecode",
+						"io"
+					],
+					"path": [
+						"tasks",
+						"10983.json"
+					]
+				},
+				"description": "É possivel estar visualizando mais informações da task criada no campo {Body}.\n\nNele também é possivel estar alterando o parametro da tarefa como o proprio {body} para alterar o corpo da mensagem da task, a ordem de ordenação da lista em {sort_order} e também é possivel estar alterado o status da tarefa mudando o parametro {\"completed\":false} para true"
+			},
+			"response": []
+		},
+		{
+			"name": "SubTask - 10983",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "qa-test.avenuecode.io"
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json;charset=UTF-8"
+					},
+					{
+						"key": "cookie",
+						"value": "XSRF-TOKEN=kXvm5ojQPF4nuo7T5utLCb07QzPaqSXHqU1r8ME4z30%3D; _todo_rails_angular_session=K2YybXNSbi9XZ0VqNk1HMzRySWs2NEVSaGZQdjJuYkUxQmNiQmx0QTBMN3BScmdNV3ZIcTMyRk9lUDVwWU1MZnFvblNBbGlCTWMrR0VoU0t5NWpwZjk3MjVIZ1dDdCtBa0tJSjZ6YkdsZHhCTDhRRHR5NTdqZXY2RS9RUzVIOUtGTmdxMEJEN2VOSkxzbFJvbFR4bDZZWGtxeFFKeTc0S253U3BMZWpaZXoybDF5b2tFSm80Q3pzc21Bb1d0c0RmTU1Oc1h0QjRzamxoWjlZNmFSZm85WVBYVzkvL1FTS21pQzBwRUJGTlNCKzAwVVZzeVFjc3hVYk5rR2tEa3ozbUZmV2gyZDNWYjh2djlYWElLMExsczBubVU0dGE2TFk2b0tQemUwQzEwSXcrQkt1VWhuTE00b2NnS3YzWVk2UnEtLTA4Rlp3MXRoMmw1L2Mzd1phVW81QkE9PQ%3D%3D--b948ca491bbf4d95408aacd42f76034ff1b448fd"
+					},
+					{
+						"key": "dnt",
+						"value": "1"
+					},
+					{
+						"key": "origin",
+						"value": "https://qa-test.avenuecode.io"
+					},
+					{
+						"key": "referer",
+						"value": "https://qa-test.avenuecode.io/tasks"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"110\", \"Not A(Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "x-xsrf-token",
+						"value": "kXvm5ojQPF4nuo7T5utLCb07QzPaqSXHqU1r8ME4z30="
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"task_id\":10983,\"completed\":true,\"due_date\":\"3/3/2023\",\"body\":\"SubTask Example33\"}"
+				},
+				"url": {
+					"raw": "https://qa-test.avenuecode.io/tasks/10983/sub_tasks.json",
+					"protocol": "https",
+					"host": [
+						"qa-test",
+						"avenuecode",
+						"io"
+					],
+					"path": [
+						"tasks",
+						"10983",
+						"sub_tasks.json"
+					]
+				},
+				"description": "Também é possivel estar alterando o status da task alterando o parametro \"completed\":true para false e vice-versa e também é possivel estar criando a mensagem da subtask alterando o parametro \"body\""
+			},
+			"response": []
+		}
+	]
+}

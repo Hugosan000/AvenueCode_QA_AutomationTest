@@ -1,0 +1,3 @@
+O acesso utilizado para realizar os testes tanto de API quanto os testes na aplicação são:
+Login:victorfonsecasp@gmail.com
+Password: Qualityassurance
